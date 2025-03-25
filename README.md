@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# YouTube Playlist Extractor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+YouTube 링크를 추출하고 재생목록에 자동으로 추가하는 웹 애플리케이션입니다.
 
-Currently, two official plugins are available:
+## 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 카카오톡 메시지에서 YouTube 링크 자동 추출
+- Google 계정 연동
+- YouTube 재생목록 자동 업데이트
+- 모던한 UI/UX
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Chakra UI
+- YouTube Data API
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 시작하기
+
+1. 저장소 클론
+```bash
+git clone https://github.com/leessosso/youtube-playlist.git
+cd youtube-playlist
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. 의존성 설치
+```bash
+npm install
 ```
+
+3. 환경 변수 설정
+`.env` 파일을 생성하고 다음 내용을 추가하세요:
+```
+VITE_YOUTUBE_API_KEY=your_youtube_api_key
+```
+
+4. 개발 서버 실행
+```bash
+npm run dev
+```
+
+## 라이선스
+
+MIT
