@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>YouTube Playlist</title>
     <script>
-      // 현재 URL을 가져옵니다
+      // 현재 URL에서 /youtube-playlist/ 이후의 경로만 가져옵니다
       const currentPath = window.location.pathname;
+      const pathAfterBase = currentPath.replace('/youtube-playlist/', '');
       
       // index.html로 리다이렉트합니다
-      window.location.href = '/youtube-playlist/index.html' + currentPath;
+      window.location.href = '/youtube-playlist/index.html' + (pathAfterBase ? '/' + pathAfterBase : '');
     </script>
   </head>
   <body>
