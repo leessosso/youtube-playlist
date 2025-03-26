@@ -31,9 +31,8 @@ jobs:
           VITE_GOOGLE_CLIENT_SECRET: ${{ secrets.VITE_GOOGLE_CLIENT_SECRET }}
           
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: dist
           path: './dist'
           
       - name: Deploy to GitHub Pages
