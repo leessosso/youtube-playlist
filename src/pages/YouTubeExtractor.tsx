@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { initYouTubeAuth, isAuthenticated, logout } from '../utils/youtubeAuth';
+import { initYouTubeAuth, logout } from '../utils/youtubeAuth';
 import {
   Box,
   Button,
