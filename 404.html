@@ -6,12 +6,12 @@
     <script>
       // 현재 URL에서 /youtube-playlist/ 이후의 경로만 가져옵니다
       const currentPath = window.location.pathname;
-      const pathAfterBase = currentPath.replace('/youtube-playlist/', '');
+      const pathAfterBase = currentPath.replace('/youtube-playlist', '');
       
       // index.html이 이미 포함되어 있는지 확인
-      if (!pathAfterBase.startsWith('index.html')) {
+      if (!pathAfterBase.startsWith('/index.html')) {
         // index.html로 리다이렉트합니다
-        window.location.href = '/youtube-playlist/index.html' + (pathAfterBase ? '/' + pathAfterBase : '');
+        window.location.href = '/youtube-playlist/index.html' + pathAfterBase;
       } else {
         // 이미 index.html이 포함되어 있다면 그대로 유지
         window.location.href = '/youtube-playlist' + pathAfterBase;
