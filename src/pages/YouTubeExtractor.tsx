@@ -25,19 +25,18 @@ interface Playlist {
   itemCount: number;
 }
 
-export default function YouTubeExtractor() {
+interface YouTubeExtractorProps {
+  authStatus: boolean;
+}
+
+export default function YouTubeExtractor({ authStatus }: YouTubeExtractorProps) {
   const toast = useToast();
   const [message, setMessage] = useState('');
   const [extractedLinks, setExtractedLinks] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [authStatus, setAuthStatus] = useState(false);
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
   const [selectedPlaylistId, setSelectedPlaylistId] = useState<string>('');
   const [isLoadingPlaylists, setIsLoadingPlaylists] = useState(false);
-
-  useEffect(() => {
-    setAuthStatus(isAuthenticated());
-  }, []);
 
   const fetchPlaylists = async () => {
     if (!authStatus) return;
