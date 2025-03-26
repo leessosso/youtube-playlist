@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<YouTubeExtractor />} />
-          <Route path="youtube-callback" element={<YouTubeCallback />} />
+          <Route path="youtube-playlist/youtube-callback" element={<YouTubeCallback />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
