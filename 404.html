@@ -8,13 +8,9 @@
       const currentPath = window.location.pathname;
       const pathAfterBase = currentPath.replace('/youtube-playlist', '');
       
-      // index.html이 이미 포함되어 있는지 확인
-      if (!pathAfterBase.startsWith('/index.html')) {
-        // index.html로 리다이렉트합니다
+      // index.html이 포함되어 있지 않은 경우에만 리다이렉트
+      if (!currentPath.includes('/index.html')) {
         window.location.href = '/youtube-playlist/index.html' + pathAfterBase;
-      } else {
-        // 이미 index.html이 포함되어 있다면 그대로 유지
-        window.location.href = '/youtube-playlist' + pathAfterBase;
       }
     </script>
   </head>
