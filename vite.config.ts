@@ -12,5 +12,6 @@ export default defineConfig({
         notFound: '404.html'
       }
     }
-  }
+  },
+  publicDir: 'public'
 })
