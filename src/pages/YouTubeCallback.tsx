@@ -13,12 +13,12 @@ export default function YouTubeCallback() {
       if (code) {
         const success = await handleAuthCallback(code);
         if (success) {
-          navigate('/');
+          navigate(import.meta.env.NODE_ENV === 'production' ? '/youtube-playlist/' : '/');
         } else {
-          navigate('/?error=auth_failed');
+          navigate(import.meta.env.NODE_ENV === 'production' ? '/youtube-playlist/?error=auth_failed' : '/?error=auth_failed');
         }
       } else {
-        navigate('/?error=no_code');
+        navigate(import.meta.env.NODE_ENV === 'production' ? '/youtube-playlist/?error=no_code' : '/?error=no_code');
       }
     };
 
