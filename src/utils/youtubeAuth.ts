@@ -2,7 +2,7 @@ const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_GOOGLE_CLIENT_SECRET;
 // 개발 환경과 운영 환경의 리디렉션 URI 분리
 const REDIRECT_URI = import.meta.env.NODE_ENV === 'production' 
-  ? 'https://leessosso.github.io/youtube-playlist/'
+  ? 'https://leessosso.github.io/youtube-playlist/youtube-callback'
   : `${window.location.origin}/youtube-callback`;
 
 export const initYouTubeAuth = () => {
