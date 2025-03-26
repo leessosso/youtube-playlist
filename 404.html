@@ -6,8 +6,8 @@
     <script>
       // 현재 URL에서 쿼리 파라미터를 추출
       const searchParams = window.location.search;
-      // 메인 페이지로 리다이렉트
-      window.location.href = '/youtube-playlist/' + searchParams;
+      // OAuth 콜백 경로를 유지하면서 리다이렉트
+      window.location.href = '/youtube-playlist/youtube-callback' + searchParams;
     </script>
   </head>
   <body>
