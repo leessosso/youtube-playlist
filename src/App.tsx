@@ -13,7 +13,6 @@ function App() {
         <Routes>
           <Route path="/" element={<YouTubeExtractor />} />
           <Route path="youtube-callback" element={<YouTubeCallback />} />
-          <Route path="index.html/youtube-callback" element={<YouTubeCallback />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
