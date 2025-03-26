@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, createStandaloneToast } from '@chakra-ui/react';
 import YouTubeExtractor from './pages/YouTubeExtractor';
 import YouTubeCallback from './pages/YouTubeCallback';
@@ -9,12 +9,12 @@ function App() {
   return (
     <ChakraProvider>
       <ToastContainer />
-      <Router>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<YouTubeExtractor />} />
           <Route path="/youtube-callback" element={<YouTubeCallback />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
